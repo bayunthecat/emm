@@ -2,7 +2,7 @@ package com.test.emm.model;
 
 import java.util.Date;
 
-public class User extends Entity {
+public class Client extends Entity {
 
     private String name;
 
@@ -52,5 +52,16 @@ public class User extends Entity {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                ", gender=" + gender +
+                '}';
     }
 }

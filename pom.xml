@@ -11,12 +11,23 @@
         <struts-version>2.5.8</struts-version>
         <servlet-api-version>3.1.0</servlet-api-version>
         <spring-version>4.3.6.RELEASE</spring-version>
+        <mysql-driver-version>5.1.40</mysql-driver-version>
+        <struts-convention>2.2.1</struts-convention>
+        <struts-spring-plugin>2.5.8</struts-spring-plugin>
+        <opensymphony-version>2.1.2</opensymphony-version>
+        <display-tag-version>1.2</display-tag-version>
+        <strruts-jquery-plugin-version>4.0.2</strruts-jquery-plugin-version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>${struts-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>${struts-spring-plugin}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -37,6 +48,26 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-driver-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>displaytag</groupId>
+            <artifactId>displaytag</artifactId>
+            <version>${display-tag-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgeppert.struts2.jquery</groupId>
+            <artifactId>struts2-jquery-plugin</artifactId>
+            <version>${strruts-jquery-plugin-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-dojo-plugin</artifactId>
+            <version>2.3.31</version>
         </dependency>
     </dependencies>
     <build>
