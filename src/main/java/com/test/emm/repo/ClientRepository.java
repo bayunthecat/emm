@@ -10,10 +10,8 @@ public interface ClientRepository {
 
     boolean remove(long id);
 
-    Client get(long id);
+    List<Client> getAll(int offset, int limit, String sortBy, String dir);
 
-    Client update(Client client);
-
-    List<Client> getAll(int offset, int limit);
+    int getClientCount();
 
 }

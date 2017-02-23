@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="clientFormBean"
+                   type="com.test.emm.action.bean.ClientFormBean"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/addClient"
+                type="com.test.emm.action.CreateClientAction"
+                name="clientFormBean"
+                attribute="clientFormBean"
+                validate="false"
+                input="/public/new-client.jsp">
+            <forward name="success" path="/WEB-INF/pages/result.jsp"/>
+        </action>
+    </action-mappings>
+
+    <controller>
+        <set-property property="processorClass" value="org.springframework.web.struts.AutowiringRequestProcessor" />
+    </controller>
+
+    <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+        <set-property property="contextConfigLocation" value="/context.xml"/>
+    </plug-in>
+
+</struts-config>
