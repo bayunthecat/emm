@@ -15,20 +15,20 @@
    <h1>Create user</h1>
    <html:form action="addClient">
 
-      Name : <html:text property="name"/>
+      <span>Name : </span><html:text property="name"/>
       <html:messages id="messages" property="error.name.empty"/>
       </br>
 
-      Surname : <html:text property="surname"/>
+      <span>Surname : </span><html:text property="surname"/>
       </br>
 
-      Email : <html:text property="email"/>
+      <span>Email : </span><html:text property="email"/>
       </br>
 
-      BirthDate : <html:text property="birthDate" styleId="datepicker"/>
+      <span>BirthDate : </span><html:text property="birthDate" styleId="datepicker"/>
       </br>
 
-      Gender : <html:select property="gender">
+      <span>Gender : </span><html:select property="gender">
         <html:option value="MALE">Male</html:option>
         <html:option value="FEMALE">Female</html:option>
       </html:select></br>
