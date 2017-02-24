@@ -22,7 +22,8 @@
         <action path="/allClients"
                 type="com.test.emm.action.AllClients"
                 name="allClientsForm"
-                input="/WEB-INF/pages/all-clients.jsp">
+                input="/WEB-INF/pages/all-clients.jsp"
+                scope="request">
             <forward name="success" path="/WEB-INF/pages/all-clients.jsp"/>
         </action>
     </action-mappings>

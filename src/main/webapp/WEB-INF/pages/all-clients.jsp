@@ -7,10 +7,10 @@
 </jsp:include>
 <body>
    <h1>All clients</h1>
-   <display:table name="allClients"
-                  size="100"
+   <display:table name="requestScope.allClientsForm.allClients"
+                  size="requestScope.allClientsForm.allClients.fullListSize"
                   sort="external"
-                  requestURI="allClients"
+                  requestURI="/allClients.do"
                   partialList="true"
                   pagesize="20">
     <display:column property="name" sortable="true"/>
