@@ -1,9 +1,8 @@
-package com.test.emm.action.bean;
+package com.test.emm.action.form;
 
-import com.test.emm.model.Gender;
 import org.apache.struts.action.ActionForm;
 
-public class ClientFormBean extends ActionForm {
+public class ClientForm extends ActionForm {
 
     private String name;
 
@@ -13,7 +12,7 @@ public class ClientFormBean extends ActionForm {
 
     private String birthDate;
 
-    private Gender gender;
+    private String gender;
 
     public String getName() {
         return name;
@@ -47,11 +46,13 @@ public class ClientFormBean extends ActionForm {
         this.birthDate = birthDate;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
+
+
 }

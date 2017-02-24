@@ -1,38 +1,27 @@
 package com.test.emm.action;
 
+import com.test.emm.action.form.AllClientsForm;
+import com.test.emm.dto.PaginatedListImpl;
 import com.test.emm.service.ClientService;
-import org.displaytag.pagination.PaginatedList;
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component("allClients")
-@Scope(BeanDefinition.SCOPE_PROTOTYPE)
-public class AllClients {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Collections;
 
-    private int pageNum;
-
-    private String dir;
-
-    private String sort;
+public class AllClients extends Action {
 
     @Autowired
     private ClientService clientService;
 
-    public PaginatedList getAllClients() {
-        return clientService.getClients(pageNum, 20, sort, dir);
-    }
-
-    public void setPage(int page) {
-        this.pageNum = page > 0 ? page : 1;
-    }
-
-    public void setDir(String dir) {
-        this.dir = dir;
-    }
-
-    public void setSort(String sort) {
-        this.sort = sort;
+    @Override
+    public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        AllClientsForm allClientsForm = (AllClientsForm) form;
+        allClientsForm.setList(new PaginatedListImpl<>(Collections.emptyList()));
+        return mapping.findForward("success");
     }
 }

@@ -8,10 +8,10 @@
 <body>
    <h1>All clients</h1>
    <display:table name="allClients"
+                  size="100"
                   sort="external"
-                  requestURI="all-clients"
+                  requestURI="allClients"
                   partialList="true"
-                  size="allClients.fullListSize"
                   pagesize="20">
     <display:column property="name" sortable="true"/>
     <display:column property="surname" sortable="true"/>

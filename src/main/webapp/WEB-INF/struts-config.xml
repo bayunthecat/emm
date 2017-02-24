@@ -6,18 +6,24 @@
 <struts-config>
 
     <form-beans>
-        <form-bean name="clientFormBean"
-                   type="com.test.emm.action.bean.ClientFormBean"/>
+        <form-bean name="clientForm"
+                   type="com.test.emm.action.form.ClientForm"/>
+        <form-bean name="allClientsForm"
+                   type="com.test.emm.action.form.AllClientsForm"/>
     </form-beans>
 
     <action-mappings>
         <action path="/addClient"
                 type="com.test.emm.action.CreateClientAction"
-                name="clientFormBean"
-                attribute="clientFormBean"
-                validate="false"
+                name="clientForm"
                 input="/public/new-client.jsp">
-            <forward name="success" path="/WEB-INF/pages/result.jsp"/>
+            <forward name="success" path="/public/new-client.jsp"/>
+        </action>
+        <action path="/allClients"
+                type="com.test.emm.action.AllClients"
+                name="allClientsForm"
+                input="/WEB-INF/pages/all-clients.jsp">
+            <forward name="success" path="/WEB-INF/pages/all-clients.jsp"/>
         </action>
     </action-mappings>
 
