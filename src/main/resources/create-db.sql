@@ -24,8 +24,7 @@ CREATE TABLE IF NOT EXISTS `emm`.`client` (
   `email` VARCHAR(254) NULL COMMENT '',
   `birthDate` DATE NULL COMMENT '',
   `gender` VARCHAR(6) NULL COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '',
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC)  COMMENT '')
+  PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
 

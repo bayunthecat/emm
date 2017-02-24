@@ -16,8 +16,9 @@
         <action path="/addClient"
                 type="com.test.emm.action.CreateClientAction"
                 name="clientForm"
-                input="/public/new-client.jsp">
-            <forward name="success" path="/public/new-client.jsp"/>
+                input="/public/new-client.jsp"
+                validate="true">
+            <forward name="success" path="/allClients.do"/>
         </action>
         <action path="/allClients"
                 type="com.test.emm.action.AllClients"
@@ -26,11 +27,19 @@
                 scope="request">
             <forward name="success" path="/WEB-INF/pages/all-clients.jsp"/>
         </action>
+        <action path="/deleteClient"
+                type="com.test.emm.action.DeleteClient"
+                name="clientForm"
+                validate="false">
+            <forward name="success" path="/allClients.do"/>
+        </action>
     </action-mappings>
 
     <controller>
         <set-property property="processorClass" value="org.springframework.web.struts.AutowiringRequestProcessor" />
     </controller>
+
+    <message-resources parameter="messages"/>
 
     <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
         <set-property property="contextConfigLocation" value="/context.xml"/>

@@ -14,11 +14,21 @@
 <body>
    <h1>Create user</h1>
    <html:form action="addClient">
-      <html:text property="name"/></br>
-      <html:text property="surname"/></br>
-      <html:text property="email"/></br>
-      <html:text property="birthDate"/></br>
-      <html:select property="gender">
+
+      Name : <html:text property="name"/>
+      <html:messages id="messages" property="error.name.empty"/>
+      </br>
+
+      Surname : <html:text property="surname"/>
+      </br>
+
+      Email : <html:text property="email"/>
+      </br>
+
+      BirthDate : <html:text property="birthDate" styleId="datepicker"/>
+      </br>
+
+      Gender : <html:select property="gender">
         <html:option value="MALE">Male</html:option>
         <html:option value="FEMALE">Female</html:option>
       </html:select></br>

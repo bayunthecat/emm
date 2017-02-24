@@ -73,7 +73,7 @@ public class MySqlQueryBuilder implements QueryBuilder {
 
     @Override
     public QueryBuilder delete(String table, String byField, Object value) {
-        if (StringUtils.isEmpty(byField) && value != null) {
+        if (!StringUtils.isEmpty(byField) && value != null) {
             query.append(DELETE_FROM).append(table).append(WHERE).append(byField).append(EQUAL).append(value);
         }
         return this;
