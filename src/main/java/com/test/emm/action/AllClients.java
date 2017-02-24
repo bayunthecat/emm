@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AllClients extends Action {
 
+    private static final int PAGE_SIZE = 20;
+
     @Autowired
     private ClientService clientService;
 
@@ -22,7 +24,7 @@ public class AllClients extends Action {
         allClientsForm.setList(
                 clientService.getClients(
                         allClientsForm.getPage(),
-                        20,
+                        PAGE_SIZE,
                         allClientsForm.getSort(),
                         allClientsForm.getDir()));
         return mapping.findForward("success");
